@@ -39,11 +39,11 @@ export default {
   data() {
     return {
       items: [
-        { text: 'SEARCH GAME', opacity: 1, selected: false },
         { text: 'DUEL', opacity: 1, selected: true },
         { text: 'PLAY WITH A BOT', opacity: 1, selected: false },
-        { text: 'LEADERS BOARD', opacity: 1, selected: false },
         { text: 'QUESTS', opacity: 1, selected: false },
+        { text: 'LEADERS BOARD', opacity: 1, selected: false },
+        { text: 'SEARCH GAME', opacity: 1, selected: false },
         { text: 'SETTINGS', opacity: 1, selected: false },
       ],
       scrolling: false,
