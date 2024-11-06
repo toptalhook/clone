@@ -52,7 +52,19 @@ export default {
     };
   },
   mounted() {
-    
+    const menuItems = this.$refs.menuItems;
+  let startY;
+
+  menuItems.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].pageY;
+  });
+
+  menuItems.addEventListener('touchmove', (e) => {
+    const moveY = e.touches[0].pageY - startY;
+    menuItems.scrollTop -= moveY;
+    startY = e.touches[0].pageY;
+    e.preventDefault(); // Prevent default scroll behavior
+  });
   },
   methods: {
     selectItem(name: string) {
