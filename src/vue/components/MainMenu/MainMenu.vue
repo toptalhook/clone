@@ -1,7 +1,7 @@
 <template>
   <div class="MainMenu__container">
     <div class="MainMenu">
-      <div class="MainMenu__title --bold">STAR DEFENDER</div>
+      <div class="MainMenu__title --bold">{{ text }}</div>
       <div class="MainMenu__close" @click="$emit('close')"></div>
       <img src="/gui/images/main-menu/main-menu-background.png">
       <div class="MainMenu__items" @scroll="handleScroll" ref="menuItems">
@@ -48,6 +48,7 @@ export default {
       ],
       scrolling: false,
       isScrolledToBottom: false,
+      text: 'star defender',
     };
   },
   mounted() {
@@ -61,7 +62,9 @@ export default {
       this.$emit('selectItem', name); 
     },
     handleScroll(event: Event) {
-      // const target = event.target as HTMLElement;
+
+      const target = event.target as HTMLElement;
+      this.text = 'star defender' + target.scrollTop;
       // const bottomReached = Math.abs(
       //   target.scrollHeight - target.scrollTop - target.clientHeight
       // ) < 5;
