@@ -61,8 +61,6 @@
 
 .MainMenu__items {
   position: absolute;
-  z-index: 5;
-  pointer-events: all;
   width: 90%;
   max-height: 74%;
   top: 20%;
@@ -71,14 +69,12 @@
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto !important;
-  /* -webkit-overflow-scrolling: touch !important; */
   -webkit-overflow-scrolling: touch;
 }
 
 .MainMenu__items-boxshadow {
   pointer-events: none;
   position: absolute;
-  z-index: 6;
   width: calc(100% - 14px);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;

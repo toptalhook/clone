@@ -52,19 +52,8 @@ export default {
     };
   },
   mounted() {
-    const menuItems = this.$refs.menuItems;
-  let startY;
-
-  menuItems.addEventListener('touchstart', (e) => {
-    startY = e.touches[0].pageY;
-  });
-
-  menuItems.addEventListener('touchmove', (e) => {
-    const moveY = e.touches[0].pageY - startY;
-    menuItems.scrollTop -= moveY;
-    startY = e.touches[0].pageY;
-    e.preventDefault(); // Prevent default scroll behavior
-  });
+    const boxContentPopupCards = this.$refs.menuItems;
+    boxContentPopupCards.addEventListener('touchmove', (e) => e.preventDefault());
   },
   methods: {
     selectItem(name: string) {
@@ -75,12 +64,6 @@ export default {
     },
     handleScroll(event: Event) {
 
-      const target = event.target as HTMLElement;
-      this.text = 'star defender' + target.scrollTop;
-      // const bottomReached = Math.abs(
-      //   target.scrollHeight - target.scrollTop - target.clientHeight
-      // ) < 5;
-      // this.isScrolledToBottom = bottomReached;
     },
   },
  

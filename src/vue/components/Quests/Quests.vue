@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="Quests__body" :class="{ 'disabled': isModalOpen }">
+                <div class="Quests__body" :class="{ 'disabled': isModalOpen }" ref="questsBody">
                     <div class="Quests__content">
                        <QuestsItem 
                        v-for="(item, index) in questItemList"
@@ -126,6 +126,11 @@ export default {
         isModalOpen() {
             return this.unstoppableRewards || this.canGetReward || this.showCheckModal;
         }
+    },
+
+    mounted() {
+        const boxContentPopupCards = this.$refs.questsBody;
+         boxContentPopupCards.addEventListener('touchmove', (e) => e.preventDefault());
     },
 
     methods: {
